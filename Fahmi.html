@@ -1,0 +1,50 @@
+
+<html>
+<head>
+	<style>
+		.ruang {
+			width:250px;
+			height: 200px;
+			background-color: orange;
+			padding : 50px;
+
+		}
+		.angka {
+			background-color: white;
+			width: 200px;
+			margin: 10px;
+			text-align: center; 		
+		}
+	</style>
+
+</head>
+<body>
+	<div class="ruang" center>
+		
+			<div class='angka' id='angka1'>1</div>
+			<div class='angka' id='angka2'>2</div>
+			<div class='angka' id='angka3'>3</div>
+			<div class='angka' id='angka4'>4</div>
+			<div class='angka' id='angka5'>5</div>
+			
+			<button id="randombutton">RANDOM</button>
+			<button id="celarbutton">CLEAR</button>
+	</div>
+	
+</body>
+
+</html>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#randombutton').onClick(function(){
+			var angka = rand(1,4);
+			var id = 'angka'+$angka;
+			$(id).css("background-color:blue");	
+		}) ;
+
+		$('#celarbutton').onClick(function(){
+
+		});
+
+	});
+</script>
