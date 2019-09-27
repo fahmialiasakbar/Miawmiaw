@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Laftof"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-09-22 04:39:45 PM"/>
+        <attribute name="created" value="TGFmdG9mO0RFU0tUT1AtQ0E2MjJJTDsyMDE5LTA5LTIyOzAzOjIxOjE4IFBNOzI5MDY="/>
+        <attribute name="edited" value="TGFmdG9mO0RFU0tUT1AtQ0E2MjJJTDsyMDE5LTA5LTIyOzAzOjIxOjIyIFBNOzE7TGFmdG9mO0RFU0tUT1AtQ0E2MjJJTDsyMDE5LTA5LTIyOzAyOjQ0OjM3IFBNO1ByaW1hMS5mcHJnOzcwNjk="/>
+        <attribute name="edited" value="TGFmdG9mO0RFU0tUT1AtQ0E2MjJJTDsyMDE5LTA5LTIyOzA0OjM5OjQ1IFBNOzY7MzAyOQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <declare name="y" type="Integer" array="False" size=""/>
+            <declare name="z" type="Integer" array="False" size=""/>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="bil" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <assign variable="r" expression="0"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <input variable="bil"/>
+            <declare name="arr" type="Integer" array="True" size="bil"/>
+            <assign variable="arr[0]" expression="1"/>
+            <declare name="ind" type="Integer" array="False" size=""/>
+            <assign variable="ind" expression="0"/>
+            <declare name="go" type="Boolean" array="False" size=""/>
+            <assign variable="x" expression="1"/>
+            <for variable="y" start="1" end="bil" direction="inc" step="1">
+                <assign variable="go" expression="false"/>
+                <for variable="c" start="0" end="ind" direction="inc" step="1">
+                    <if expression="x%arr[c]==0&amp;&amp;c!=0">
+                        <then>
+                            <assign variable="go" expression="true"/>
+                            <assign variable="c" expression="ind"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <assign variable="r" expression="r+1"/>
+                </for>
+                <if expression="go==false">
+                    <then>
+                        <assign variable="a" expression="0"/>
+                        <for variable="z" start="1" end="x" direction="inc" step="1">
+                            <if expression="x%z==0">
+                                <then>
+                                    <assign variable="a" expression="a+1"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <assign variable="r" expression="r+1"/>
+                        </for>
+                        <if expression="a==2">
+                            <then>
+                                <output expression="x" newline="True"/>
+                                <assign variable="ind" expression="ind+1"/>
+                                <assign variable="arr[ind]" expression="x"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="x" expression="x+1"/>
+                <assign variable="r" expression="r+1"/>
+            </for>
+            <output expression="r" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
